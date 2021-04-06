@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FormFillActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/label_personal_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20dp"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="Personal Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_dimen_18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ed_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_personal_details"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="आवेदक का नाम" />
+
+            <EditText
+                android:id="@+id/ed_birth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_name"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="जन्म की तारीख" />
+
+            <EditText
+                android:id="@+id/ed_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_birth"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="लिंग" />
+
+            <EditText
+                android:id="@+id/ed_email_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_sex"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="लिंग" />
+
+            <EditText
+                android:id="@+id/ed_mobile_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_email_id"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="मोबाइल नंबर" />
+
+            <EditText
+                android:id="@+id/ed_extra_mobile_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_mobile_no"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="अतिरिक्त मोबाइल नंबर" />
+
+            <TextView
+                android:id="@+id/tv_business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_extra_mobile_no"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:text="व्यवसाय"
+                android:textSize="@dimen/dimen_18dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_business"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false"
+                    android:text="नौकरी"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="व्यापार"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="स्व नियोजित"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="गृहिणी "
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="अन्य"
+                    android:textSize="25dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_business1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroup"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:text="स्वामित्व प्ररूप"
+                android:textSize="@dimen/dimen_18dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_business1"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false"
+                    android:text="स्वयं"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="किराए पर"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="कंपनी द्वारा"
+                    android:textSize="25dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_business2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroup1"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:text="घर का प्रकार"
+                android:textSize="@dimen/dimen_18dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_business2"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radioButton12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false"
+                    android:text="फ्लैट"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton212"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="बंगले"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton312"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="रो हाउस"
+                    android:textSize="25dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/label_installation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroup12"
+                android:layout_marginStart="@dimen/dimen_20dp"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="Installation Address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_dimen_18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ed_flat_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_installation"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="फ्लैट संख्या" />
+
+            <EditText
+                android:id="@+id/ed_wing_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_flat_no"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="मंज़िल" />
+
+            <EditText
+                android:id="@+id/ed_society_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_wing_no"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="सोसाइटी का नाम" />
+
+            <EditText
+                android:id="@+id/ed_landmark_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_society_name"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="लैन्ड्मार्क" />
+
+            <EditText
+                android:id="@+id/ed_city_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_landmark_name"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="शहर का नाम" />
+
+            <EditText
+                android:id="@+id/ed_jila_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_city_name"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="जिला" />
+
+            <EditText
+                android:id="@+id/ed_pin_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_jila_name"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="पिन कोड" />
+
+            <EditText
+                android:id="@+id/ed_aadhar_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_pin_code"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="आधार नं" />
+
+            <EditText
+                android:id="@+id/ed_pan_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_aadhar_card"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="पैन कार्ड" />
+
+            <TextView
+                android:id="@+id/label_other_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_pan_card"
+                android:layout_marginStart="@dimen/dimen_20dp"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="Personal Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_dimen_18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_cylinder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_other_info"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:text="आप किस कंपनी का सिलेंडर इस्तेमाल कर रहे हैं ?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_18dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_cy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_cylinder"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radioButton12cy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false"
+                    android:text="HPCL"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton212cy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="BPCL"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton312cy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="IOCL"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton313cy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="Any Other"
+                    android:textSize="25dp" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/ed_grahak_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroup_cy"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="ग्रहाक नं" />
+
+            <EditText
+                android:id="@+id/ed_agency_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_grahak_no"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="एजेंसी का नाम" />
+
+            <EditText
+                android:id="@+id/ed_kitchen_point"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_agency_name"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="किचन बिंदु" />
+
+            <EditText
+                android:id="@+id/ed_gyser_point"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_kitchen_point"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:hint="पगीजर बिंदु" />
+
+            <TextView
+                android:id="@+id/tv_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_gyser_point"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:text="अतिरिक्त रसोई और गीज़र बिंदु के अनुरोध पर, यह अतिरिक्त पाइप लेगा, जो तदनुसार लागत में वृद्धि करेगा"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_notes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_note"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:text="प्रस्तुत दस्तावेजों की सूची"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_notess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_notes"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:text="प्रमाण पपरिचय(एक)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_20dp"
+                android:textStyle="bold" />
+            <RadioGroup
+                android:id="@+id/radioGroup_cy_int"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_notess"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radioButton_int"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false"
+                    android:text="ड्राइविंग लाइसेंस"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton212cy_int"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="पैन कार्ड"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton312cy_int"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="आधार कार्ड"
+                    android:textSize="25dp" />
+                <RadioButton
+                    android:id="@+id/radioButton312cy_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="पासपोर्ट"
+                    android:textSize="25dp" />
+                <RadioButton
+                    android:id="@+id/radioButton312cy_inte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="वोटर कार्ड"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton313cy_int"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="मालिकों का स्वप्रमाणित फोटो प्रमाण"
+                    android:textSize="25dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_notesss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroup_cy_int"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:text="प्स्थान प्रमाण का निवास(एक)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_20dp"
+                android:textStyle="bold" />
+            <RadioGroup
+                android:id="@+id/radioGroup_cy_int_rs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_notesss"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radioButton_int_rs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false"
+                    android:text="डबिजली का बिल(3 महीने से अधिक पुराना नहीं है)"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton212cy_int_rs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="बीएसएनएल फोन बिल(3 महीने से अधिक पुराना नहीं है)"
+                    android:textSize="25dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton312cy_int_rs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="बिक्री विलेख"
+                    android:textSize="25dp" />
+                <RadioButton
+                    android:id="@+id/radioButton312cy_in_rs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="हाउस टैक्स का बिल"
+                    android:textSize="25dp" />
+                <RadioButton
+                    android:id="@+id/radioButton312cy_inte_rs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:text="राशन पत्रिका"
+                    android:textSize="25dp" />
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/ivBoarding"
+                android:layout_width="@dimen/dimen_150dp"
+                android:layout_height="@dimen/dimen_150dp"
+                android:layout_below="@+id/radioGroup_cy_int_rs"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/transparent_cylendrical"
+                tools:ignore="MissingConstraints" />
+
+            <!--Button to pick image-->
+            <Button
+                android:id="@+id/img_pick_btn"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivBoarding"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:text="Choose Image"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/btn_sign"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_pick_btn"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="Signature" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

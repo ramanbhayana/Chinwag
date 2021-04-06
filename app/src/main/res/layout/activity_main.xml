@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainActivityViewModel"
+            type="com.app.chinwag.viewModel.MainActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@android:color/white"
+        android:focusableInTouchMode="true"
+        tools:context=".main.MainActivity">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/etSearchCity"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/transparent_cylendrical"
+            android:imeOptions="actionSearch"
+            android:importantForAutofill="no"
+            android:inputType="textCapSentences"
+            android:maxHeight="@dimen/_60sdp"
+            android:maxLines="2"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="@dimen/text_dimen_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="@string/hint_enter_city_name" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/body_scroll_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="@dimen/_8sdp"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:requiresFadingEdge="vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etSearchCity">
+
+            <LinearLayout
+                android:id="@+id/ll_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCityName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:drawablePadding="@dimen/_4sdp"
+                    tools:text="@tools:sample/lorem"
+                    android:text="@{mainActivityViewModel.weatherLiveData.name}"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_dimen_20sp"
+                    app:drawableStartCompat="@drawable/ic_location" />
+
+                <ImageView
+                    android:id="@+id/ivWeatherIcon"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:scaleType="centerInside"
+                    tools:src="@tools:sample/avatars"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/weather_icon"
+                    app:icon="@{mainActivityViewModel.weatherLiveData.icon}" />
+
+                <TextView
+                    android:id="@+id/tvTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:text="@{mainActivityViewModel.temperature}"
+                    android:textColor="@color/colorAccent"
+                    tools:text="@tools:sample/lorem"
+                    android:textSize="@dimen/_60sdp" />
+
+                <TextView
+                    android:id="@+id/tvTemperatureDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    tools:text="@tools:sample/lorem"
+                    android:text="@{mainActivityViewModel.temperatureDesc}"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_14sdp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_24sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSunRise"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:gravity="center"
+                        android:text="@{mainActivityViewModel.sunrise}"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_dimen_14sp"
+                        app:drawableTopCompat="@drawable/ic_sunrise"
+                        app:layout_constraintEnd_toStartOf="@+id/tvSunSet"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSunSet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:text="@{mainActivityViewModel.sunset}"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_dimen_14sp"
+                        app:drawableTopCompat="@drawable/ic_sunset"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvSunRise"
+                        tools:ignore="MissingConstraints" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvWindSpeed"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:gravity="center"
+                        android:text="@{mainActivityViewModel.windSpeed}"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_dimen_14sp"
+                        app:drawableTopCompat="@drawable/ic_wind"
+                        app:layout_constraintEnd_toStartOf="@+id/tvHumidity"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSunRise"
+                        tools:ignore="MissingConstraints" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvHumidity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:text="@{mainActivityViewModel.humidity}"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_dimen_14sp"
+                        app:drawableTopCompat="@drawable/ic_humidity"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvWindSpeed"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvWindSpeed"
+                        app:layout_constraintTop_toTopOf="@+id/tvWindSpeed"
+                        tools:ignore="MissingConstraints" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.03"
+            android:contentDescription="@string/bad_weather_bg"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_bad_weather"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etSearchCity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

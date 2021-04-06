@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="viewModel"
+            type="com.app.chinwag.viewModel.SignUpViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.authentication.signup.SignUpActivity">
+        <ImageView
+            android:id="@+id/iv_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_below="@+id/ibtnBack"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:src="@drawable/ic_union_6" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="-30dp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:src="@drawable/ic_union_7" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/label_sign_up_toolbar_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_dimen_18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/ic_email" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ibtnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="?actionBarSize"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Back"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textSize="@dimen/text_dimen_18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSignUp"
+            app:layout_constraintStart_toStartOf="@+id/tvSignUp"
+            app:layout_constraintTop_toTopOf="@+id/tvSignUp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSignUp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/sivUserImage"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:padding="@dimen/dimen_1dp"
+                        app:shapeAppearance="@style/ShapeAppearance.CircleImageView"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ic_component_avtar"
+                        app:strokeWidth="@dimen/_1sdp" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnAdd"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_alignEnd="@+id/sivUserImage"
+                        android:layout_alignBottom="@+id/sivUserImage"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/ic_component_plus"
+                        android:contentDescription="@string/add_profile_icon"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <!--First Name-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilFirstName"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:hint="@string/hint_FirstName"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/ic_user">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Last Name-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilLastName"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:hint="@string/hint_LastName"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/ic_user">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Email-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:hint="@string/hint_email"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/ic_email">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--UserName-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUserName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:hint="@string/hint_username_optional"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    android:visibility="gone"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/ic_user">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Mobile Number-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilMobileNumber"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:hint="@string/hint_mobile_number"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/ic_call">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietMobileNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Address-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAddress"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:hint="@string/hint_address"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    android:visibility="gone"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/ic_location">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusable="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--City-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCity"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:hint="@string/hint_city"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    android:visibility="gone"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/ic_location">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusable="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--State-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilState"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:visibility="gone"
+                    android:hint="@string/hint_state"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/ic_location">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietState"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusable="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--ZipCode-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilZipCode"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:hint="@string/hint_zip_code"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    android:visibility="gone"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/ic_location">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietZipCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusable="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--DateOfBirth-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDOB"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:hint="@string/hint_dob"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    android:visibility="gone"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/ic_calendar">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietDOB"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusable="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="date"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Password-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:hint="@string/hint_password"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:startIconDrawable="@drawable/password">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Confirm Password-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilConfirmPassword"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:hint="@string/hint_confirm_password"
+                    app:boxCornerRadiusBottomEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_24sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_24sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_24sdp"
+                    app:passwordToggleEnabled="true"
+                    app:startIconDrawable="@drawable/password">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:longClickable="false"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/cbTermsAndPolicy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/agree_terms_and_condition"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCreateAccount"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_52sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/label_create_account_button"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:cornerRadius="@dimen/_24sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/ibtnFacebook"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</layout>
